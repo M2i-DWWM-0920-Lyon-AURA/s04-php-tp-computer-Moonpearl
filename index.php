@@ -5,6 +5,24 @@ $cpuPrices = [125, 250, 500];
 
 $cpuPrices[$_GET['cpu']];   // Prix du processeur choisi par l'utilisateur
 
+// Liste des prix des mémoires vives
+$ramPrices = [40, 50, 80, 100, 160, 200];
+
+$ramPrices[$_GET['ram']];   // Prix de la mémoire vive choisie par l'utilisateur
+
+// Liste des prix des cartes graphiques
+$gpuPrices = [300, 600, 900];
+
+$gpuPrices[$_GET['gpu']];   // Prix de la carte graphique choisie par l'utilisateur
+
+// Liste des prix des systèmes d'exploitation
+$osPrices = [0, 100, 100];
+
+$osPrices[$_GET['os']];   // Prix du système d'exploitation choisi par l'utilisateur
+
+var_dump($gpuPrices[$_GET['gpu']]);
+var_dump($osPrices[$_GET['os']]);
+
 ?>
 
 <!DOCTYPE html>
