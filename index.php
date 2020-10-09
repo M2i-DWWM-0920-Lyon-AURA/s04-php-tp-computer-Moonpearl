@@ -22,6 +22,18 @@ $osPrices[$_GET['os']];   // Prix du système d'exploitation choisi par l'utilis
 
 $price = $cpuPrices[$_GET['cpu']] + $ramPrices[$_GET['ram']] + $gpuPrices[$_GET['gpu']] + $osPrices[$_GET['os']];
 
+if ($_GET['keyboard'] === 'on') {
+    $price += 100;
+}
+
+if ($_GET['mouse'] === 'on') {
+    $price += 80;
+}
+
+if ($_GET['screen'] === 'on') {
+    $price += 300;
+}
+
 var_dump($price);
 
 ?>
