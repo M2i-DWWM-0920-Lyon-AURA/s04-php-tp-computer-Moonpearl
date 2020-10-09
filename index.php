@@ -1,9 +1,11 @@
 <?php
 
-var_dump($_GET);
+// Liste des prix des processeurs
+$cpuPrices = [125, 250, 500];
+
+$cpuPrices[$_GET['cpu']];   // Prix du processeur choisi par l'utilisateur
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
