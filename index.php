@@ -1,36 +1,36 @@
 <?php
 
-// Liste des prix des processeurs
-$cpuPrices = [125, 250, 500];
+$prices = [
+    'cpu' => [125, 250, 500],
+    'ram' => [40, 50, 80, 100, 160, 200],
+    'gpu' => [300, 600, 900],
+    'os' => [0, 100, 100],
+    'hd' => [4,5246,357,67,468],
+];
 
-$cpuPrices[$_GET['cpu']];   // Prix du processeur choisi par l'utilisateur
+$price = 0;
+foreach ($prices as $componentType => $componentPrices) {
+    // Ex: si componentType === 'cpu'
+    // - alors $componentPrices = [125, 250, 500]
+    // - et $_GET[$componentType] = <le code du processeur choisi par l'utilisateur>
+    $price += $componentPrices[$_GET[$componentType]];
+}
 
-// Liste des prix des mémoires vives
-$ramPrices = [40, 50, 80, 100, 160, 200];
-
-$ramPrices[$_GET['ram']];   // Prix de la mémoire vive choisie par l'utilisateur
-
-// Liste des prix des cartes graphiques
-$gpuPrices = [300, 600, 900];
-
-$gpuPrices[$_GET['gpu']];   // Prix de la carte graphique choisie par l'utilisateur
-
-// Liste des prix des systèmes d'exploitation
-$osPrices = [0, 100, 100];
-
-$osPrices[$_GET['os']];   // Prix du système d'exploitation choisi par l'utilisateur
-
-$price = $cpuPrices[$_GET['cpu']] + $ramPrices[$_GET['ram']] + $gpuPrices[$_GET['gpu']] + $osPrices[$_GET['os']];
-
-if ($_GET['keyboard'] === 'on') {
+// Si la valeur "keyboard" est définie dans les paramètres GET
+// ET que cette valeur vaut "on"
+if (isset($_GET['keyboard']) && $_GET['keyboard'] === 'on') {
     $price += 100;
 }
 
-if ($_GET['mouse'] === 'on') {
+// Si la valeur "mouse" est définie dans les paramètres GET
+// ET que cette valeur vaut "on"
+if (isset($_GET['mouse']) && $_GET['mouse'] === 'on') {
     $price += 80;
 }
 
-if ($_GET['screen'] === 'on') {
+// Si la valeur "screen" est définie dans les paramètres GET
+// ET que cette valeur vaut "on"
+if (isset($_GET['screen']) && $_GET['screen'] === 'on') {
     $price += 300;
 }
 
