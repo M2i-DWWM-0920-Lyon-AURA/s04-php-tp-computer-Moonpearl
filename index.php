@@ -20,8 +20,9 @@ $osPrices = [0, 100, 100];
 
 $osPrices[$_GET['os']];   // Prix du système d'exploitation choisi par l'utilisateur
 
-var_dump($gpuPrices[$_GET['gpu']]);
-var_dump($osPrices[$_GET['os']]);
+$price = $cpuPrices[$_GET['cpu']] + $ramPrices[$_GET['ram']] + $gpuPrices[$_GET['gpu']] + $osPrices[$_GET['os']];
+
+var_dump($price);
 
 ?>
 
