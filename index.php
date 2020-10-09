@@ -12,7 +12,9 @@ foreach ($componentPrices as $type => $prices) {
     // Ex: si componentType === 'cpu'
     // - alors $componentPrices = [125, 250, 500]
     // - et $_GET[$componentType] = <le code du processeur choisi par l'utilisateur>
-    $price += $prices[$_GET[$type]];
+    if (isset($_GET[$type])) {
+        $price += $prices[$_GET[$type]];
+    }
 }
 
 $accessoryPrices = [
@@ -31,7 +33,9 @@ foreach ($accessoryPrices as $accessory => $accessoryPrice) {
     }
 }
 
-var_dump($price);
+if ($price > 0) {
+    var_dump($price);
+}
 
 ?>
 
